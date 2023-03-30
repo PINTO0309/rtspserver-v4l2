@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    rtspserver-v4l2:
+        build: .
+        container_name: rtspserver-v4l2
+        image: pinto0309/rtspserver-v4l2:latest
+        ports:
+            - "8554:8554"
+        devices:
+            - "/dev/video0:/dev/video0:mwr"
+        restart: always
